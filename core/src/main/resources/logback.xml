@@ -1,0 +1,13 @@
+<configuration>
+    <!-- https://doc.akka.io/docs/akka/current/typed/logging.html#logback -->
+    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+        <file>target/dev.log</file>
+        <encoder>
+            <pattern>[%date{ISO8601}] [%level] [%logger] [%thread] - %msg {%mdc}%n</pattern>
+        </encoder>
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="FILE"/>
+    </root>
+</configuration>
